@@ -525,7 +525,21 @@ p { margin: 0 0 0.8em; }
 .cat-hero img { width: min(100%, 420px); height: auto; object-fit: contain; background: #f4efe6; border-radius: 28px; }
 .count { font-family: var(--serif); color: var(--ink) !important; }
 
-.product-page { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 36px; }
+.pond-line {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  text-align: center;
+}
+.spec { display: grid; gap: 8px; margin: 0 0 16px; }
+.spec div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+}
+.spec dt { margin: 0; font-weight: 680; color: var(--green-deep); }
+.spec dd { margin: 0; }
 .product-page > img, .product-shots > img { width: 100%; height: auto; border-radius: 28px; object-fit: contain; background: #f4efe6; }
 .shot-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .shot-row button {

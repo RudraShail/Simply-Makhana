@@ -17,7 +17,6 @@ import {
   getCategory,
   getProduct,
   inr,
-  journey,
   orderMessage,
   products,
   productsByCategory,
@@ -46,7 +45,7 @@ export function Home() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Shree Balaji Organics · Howrah</p>
+          <p className="eyebrow">Shree Balaji Organics</p>
           <h1>
             <span>Simply</span> Makhana
           </h1>
@@ -364,14 +363,35 @@ export function ProductPage() {
             <Link to={`/category/${category.slug}`}>{category.name}</Link>
           </p>
           <h1>{product.name}</h1>
+          <dl className="spec">
+            <div>
+              <dt>Weight</dt>
+              <dd>{product.weight}</dd>
+            </div>
+            <div>
+              <dt>Price</dt>
+              <dd>{product.upcoming ? "Launching soon" : `${inr(product.price)} selling price`}</dd>
+            </div>
+            {product.mrp ? (
+              <div>
+                <dt>MRP</dt>
+                <dd>
+                  <s>{inr(product.mrp)}</s>
+                </dd>
+              </div>
+            ) : null}
+            <div>
+              <dt>Nutrition</dt>
+              <dd>{product.nutrition ? product.nutrition.title : "Printed on the pack when this launches"}</dd>
+            </div>
+          </dl>
           {product.upcoming ? (
             <p className="price-lg">
               <span className="soon-label">Launching soon</span>
             </p>
           ) : (
             <p className="price-lg">
-              {inr(product.price)}{" "}
-              <small>{product.mrp ? `Selling price · ${product.weight}` : product.weight}</small>
+              {inr(product.price)} <small>{product.weight}</small>
               {product.mrp ? (
                 <span className="mrp-note">
                   <s>MRP {inr(product.mrp)}</s>
@@ -501,22 +521,7 @@ export function About() {
       </section>
 
       <section className="section section-tint">
-        <SectionHead
-          eyebrow="Company journey"
-          title="From a Mithila pond to a Howrah counter."
-          lede="Five steps. The crop, the packing house, the biscuit, the wider shelf, and the counter you can still walk into."
-        />
-        <ol className="journey">
-          {journey.map((item) => (
-            <li key={item.step}>
-              <strong>{item.step}</strong>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+        <h2 className="pond-line">From the Ponds of Mithila to Your Kitchen</h2>
       </section>
 
       <section className="section">
