@@ -525,10 +525,30 @@ p { margin: 0 0 0.8em; }
 .cat-hero img { width: min(100%, 420px); height: auto; object-fit: contain; background: #f4efe6; border-radius: 28px; }
 .count { font-family: var(--serif); color: var(--ink) !important; }
 
+.pond-story {
+  width: min(760px, calc(100% - 8vw));
+  margin-inline: auto;
+}
 .pond-line {
   margin: 0;
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   text-align: center;
+}
+.pond-story p {
+  margin: 18px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  text-align: center;
+}
+.pond-mark {
+  margin-top: 28px !important;
+  font-family: var(--serif);
+  font-size: 1.45rem !important;
+  color: var(--green-deep);
+}
+.pond-close {
+  font-weight: 650;
+  letter-spacing: 0.01em;
 }
 .spec { display: grid; gap: 8px; margin: 0 0 16px; }
 .spec div {

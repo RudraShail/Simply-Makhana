@@ -521,7 +521,26 @@ export function About() {
       </section>
 
       <section className="section section-tint">
-        <h2 className="pond-line">From the Ponds of Mithila to Your Kitchen</h2>
+        <div className="pond-story">
+          <h2 className="pond-line">From the Ponds of Mithila to Your Kitchen</h2>
+          <p>
+            In the heart of Mithila, Bihar, makhana cultivation is a tradition passed down through
+            generations. Grown in natural ponds and harvested with care by hardworking farmers,
+            makhana represents the rich agricultural heritage of our region.
+          </p>
+          <p>
+            At <strong>Shree Balaji Organics</strong>, through our brand <strong>Simply Makhana</strong>,
+            we bring this traditional superfood to your kitchen with a commitment to quality, hygiene,
+            and taste.
+          </p>
+          <p>
+            From premium raw and flavoured makhana to makhana cookies, pasta, and flour, we are
+            making healthy and delicious choices accessible to every household while supporting the
+            farming community.
+          </p>
+          <p className="pond-mark">Simply Makhana — Tradition Meets Nutrition.</p>
+          <p className="pond-close">Rooted in Mithila. Made for Every Kitchen.</p>
+        </div>
       </section>
 
       <section className="section">
