@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import {
   EnquiryForm,
@@ -321,7 +321,11 @@ export function ProductPage() {
   const { id } = useParams();
   const product = getProduct(id);
   const [qty, setQty] = useState(1);
+  const [shot, setShot] = useState(0);
   useTitle(product ? product.name : "Product");
+  useEffect(() => {
+    setShot(0);
+  }, [id]);
   if (!product) {
     return (
       <section className="section page-top">
@@ -333,10 +337,28 @@ export function ProductPage() {
   const category = getCategory(product.category);
   const related = productsByCategory(product.category).filter((item) => item.id !== product.id).slice(0, 4);
   const interest = `${product.name} (${product.weight}) × ${qty}`;
+  const shots = product.gallery?.length ? product.gallery : [product.image];
   return (
     <>
       <article className="product-page section page-top">
-        <Photo src={product.image} alt={product.name} />
+        <div className="product-shots">
+          <img src={media(shots[shot] || product.image)} alt={product.name} />
+          {shots.length > 1 ? (
+            <div className="shot-row">
+              {shots.map((src, index) => (
+                <button
+                  type="button"
+                  key={src}
+                  className={index === shot ? "on" : ""}
+                  onClick={() => setShot(index)}
+                  aria-label={`Photo ${index + 1} of ${product.name}`}
+                >
+                  <img src={media(src)} alt="" />
+                </button>
+              ))}
+            </div>
+          ) : null}
+        </div>
         <div>
           <p className="eyebrow">
             <Link to={`/category/${category.slug}`}>{category.name}</Link>

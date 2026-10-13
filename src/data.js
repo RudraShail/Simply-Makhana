@@ -66,7 +66,7 @@ export const whyProducts = [
   },
   {
     title: "Makhana cookies",
-    text: "Makhana flour and millet, with oligofructose in place of added sugar. A 50g serving is 240 kcal and 0g added sugar.",
+    text: "Both boxes are makhana and millet, 100g, with a 50g serving at 240 kcal. The sugar-free box uses oligofructose and says no added sugar. The other box lists sugar in the ingredients.",
   },
   {
     title: "Flavours, still to come",
@@ -112,6 +112,9 @@ export const cookieNutrition = {
 export const cookieIngredients =
   "Makhana flour, millet flour, wheat flour, coconut powder, milk powder, butter, salt, oligofructose, raising agent (500(ii)).";
 
+export const cookieSugarIngredients =
+  "Makhana flour, millet flour, wheat flour, coconut powder, milk powder, butter, salt, sugar, raising agent (500(ii)).";
+
 export const categories = [
   {
     slug: "premium-makhana",
@@ -122,8 +125,8 @@ export const categories = [
   {
     slug: "makhana-cookies",
     name: "Makhana Cookies",
-    tagline: "100g makhana cookies, including the sugar-free box.",
-    image: "/images/cookies-front.jpg",
+    tagline: "Two 100g boxes: makhana and millet cookies, and the sugar-free box.",
+    image: "/images/cookie-sf-front.jpg",
   },
   {
     slug: "launching-soon",
@@ -293,12 +296,19 @@ export const products = [
     weight: "100 g",
     mrp: 60,
     price: 58,
-    image: "/images/cookies-stack.jpg",
+    image: "/images/cookie-box-front.jpg",
     badge: "100 g",
     featured: true,
-    blurb: "Makhana cookies, 100g. MRP ₹60, selling price ₹58.",
-    points: ["100 g", "Makhana cookies", "MRP ₹60"],
-    details: ["Selling price ₹58."],
+    blurb: "Makhana and millet cookies, 100g. This box lists sugar in the ingredients. MRP ₹60, selling price ₹58.",
+    points: ["High fibre", "100% veg", "High in protein", "Rich in antioxidant", "Low calorie", "Zero cholesterol"],
+    ingredients: cookieSugarIngredients,
+    allergens: "Contains wheat and milk.",
+    nutrition: {
+      ...cookieNutrition,
+      note: "A 100g pack has 2 servings. The nutrition panel says 0g added sugars. The ingredients on this box include sugar.",
+    },
+    gallery: ["/images/cookie-box-front.jpg", "/images/cookie-icons.jpg", "/images/cookie-back.jpg"],
+    details: ["Selling price ₹58. Best used within 9 months of the packing date."],
   },
   {
     id: "cookies-sf-100",
@@ -307,14 +317,33 @@ export const products = [
     weight: "100 g",
     mrp: 70,
     price: 68,
-    image: "/images/cookies-front.jpg",
+    image: "/images/cookie-sf-front.jpg",
     badge: "Sugar free",
     featured: true,
-    blurb: "Sugar-free makhana and millet cookies, 100g. MRP ₹70, selling price ₹68.",
-    points: ["100 g", "0g added sugar", "MRP ₹70"],
+    blurb: "Sugar-free makhana and millet cookies, 100g. The box says no added sugar. MRP ₹70, selling price ₹68.",
+    points: [
+      "No added sugar",
+      "High fibre",
+      "High in protein",
+      "Rich in antioxidant",
+      "Low calorie",
+      "Enriched with millets",
+      "Goodness of makhana",
+      "Weight management",
+      "Good for health",
+    ],
     ingredients: cookieIngredients,
     allergens: "Contains wheat and milk.",
-    nutrition: cookieNutrition,
+    nutrition: {
+      ...cookieNutrition,
+      note: "A 100g pack has 2 servings. This sugar-free box uses oligofructose and says no added sugar.",
+    },
+    gallery: [
+      "/images/cookie-sf-front.jpg",
+      "/images/cookie-sf-life.jpg",
+      "/images/cookie-sf-icons.jpg",
+      "/images/cookie-sf-back.jpg",
+    ],
     details: ["Selling price ₹68. Best used within 9 months of the packing date."],
   },
   {

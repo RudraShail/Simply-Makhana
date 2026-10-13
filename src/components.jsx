@@ -418,7 +418,7 @@ const instagramPhotos = [
   { src: "/images/ig-feed-4.jpg", alt: "A woman holding a Simply Makhana pouch toward the camera" },
   { src: "/images/pouch-mithila.jpg", alt: "Simply Makhana pouch with a bowl of jumbo fox nuts", pack: true },
   { src: "/images/ig-feed-5.jpg", alt: "A woman in a floral scarf holding a Simply Makhana pouch" },
-  { src: "/images/cookies-front.jpg", alt: "Simply Makhana sugar-free makhana and millet cookie box", pack: true },
+  { src: "/images/cookie-sf-front.jpg", alt: "Simply Makhana sugar-free makhana and millet cookie box", pack: true },
   { src: "/images/ig-feed-6.jpg", alt: "A man at a table with a Simply Makhana pouch and a bowl of fox nuts" },
 ];
 
