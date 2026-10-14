@@ -430,7 +430,7 @@ export function InstagramPhotoFeed() {
         <h2>
           <span>Instagram</span> feed
         </h2>
-        <a className="ig-follow" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+        <a className="ig-follow" href={company.instagram} target="_blank" rel="noreferrer">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
               fill="currentColor"
@@ -532,6 +532,17 @@ function SocialIcon({ name, glyph = false }) {
         <path
           fill="#fff"
           d="M26.8 38V25.4h4.2l.6-4.8h-4.8v-3.1c0-1.4.4-2.3 2.4-2.3h2.6v-4.3c-.5-.1-2-.2-3.8-.2-3.8 0-6.4 2.3-6.4 6.6v3.3h-4.3v4.8h4.3V38h5.2z"
+        />
+      </svg>
+    );
+  }
+  if (name === "LinkedIn") {
+    return (
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="10" fill="#0a66c2" />
+        <path
+          fill="#fff"
+          d="M14.2 19.2h4.4V34h-4.4V19.2zM16.4 13.4a2.55 2.55 0 1 1 0 5.1 2.55 2.55 0 0 1 0-5.1zM21.8 19.2h4.2v2h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 3 5.3 6.8V34h-4.4v-6.6c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V34h-4.4V19.2z"
         />
       </svg>
     );
@@ -644,25 +655,6 @@ function Footer() {
           <p className="script-mark">Simply Makhana</p>
           <p>{company.name}</p>
           <p>{company.address}</p>
-          <div className="socials">
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
-              <SocialIcon name="Instagram" />
-            </a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube">
-              <SocialIcon name="YouTube" />
-            </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
-              <SocialIcon name="Facebook" />
-            </a>
-            <a
-              href={whatsappLink("Hello Simply Makhana, I would like to know more about your products.")}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="WhatsApp"
-            >
-              <SocialIcon name="WhatsApp" />
-            </a>
-          </div>
         </div>
         <div>
           <h2>Visit & write</h2>
@@ -681,6 +673,30 @@ function Footer() {
               <Link to={`/category/${category.slug}`}>{category.name}</Link>
             </p>
           ))}
+        </div>
+        <div className="footer-socials">
+          <div className="socials">
+            <a href={company.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+              <SocialIcon name="Instagram" />
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube">
+              <SocialIcon name="YouTube" />
+            </a>
+            <a href={company.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+              <SocialIcon name="Facebook" />
+            </a>
+            <a href={company.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <SocialIcon name="LinkedIn" />
+            </a>
+            <a
+              href={whatsappLink("Hello Simply Makhana, I would like to know more about your products.")}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp"
+            >
+              <SocialIcon name="WhatsApp" />
+            </a>
+          </div>
         </div>
       </div>
       <div className="footer-base">

@@ -617,8 +617,9 @@ p { margin: 0 0 0.8em; }
 .footer a { color: white; }
 .footer h2 { font-size: 1.2rem; color: #f0d7a4; }
 .script-mark { font-family: var(--script); font-size: 2.6rem; margin: 0; color: white; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 22px; }
-.socials { display: flex; gap: 10px; margin-top: 14px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr auto; gap: 22px; align-items: start; }
+.footer-socials { display: flex; justify-content: flex-end; }
+.socials { display: flex; gap: 10px; margin-top: 0; justify-content: flex-end; flex-wrap: wrap; }
 .socials a {
   width: 42px;
   height: 42px;

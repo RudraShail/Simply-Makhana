@@ -10,6 +10,9 @@ export const company = {
   mapQuery:
     "116/1 Andul Road, opposite Bank of Baroda, Botanical Garden, Howrah 711103",
   hours: "Monday to Saturday, 10:00 am – 7:00 pm",
+  instagram: "https://www.instagram.com/shreebalajiorganics_/",
+  facebook: "https://www.facebook.com/share/19kKcFKApw/",
+  linkedin: "https://www.linkedin.com/in/shree-balaji-organics-a2722341a",
 };
 
 export const journey = [
