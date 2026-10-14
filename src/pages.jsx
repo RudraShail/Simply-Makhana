@@ -15,6 +15,7 @@ import {
   categories,
   company,
   getCategory,
+  launchingLine,
   getProduct,
   inr,
   orderMessage,
@@ -127,7 +128,7 @@ export function Home() {
         <SectionHead
           eyebrow="Launching soon"
           title="Coming to the shelf"
-          lede="Flavoured makhana, pasta, flour, kheer, chips, and papad. These are not on sale yet."
+          lede={launchingLine}
           action={
             <Link className="text-link" to="/category/launching-soon">
               See what is next
@@ -247,7 +248,11 @@ export function Shop() {
       <SectionHead
         eyebrow="The full shelf"
         title={q ? `Results for “${params.get("q")}”` : "All products"}
-        lede={`${list.filter((product) => !product.upcoming).length} on sale now, ${list.filter((product) => product.upcoming).length} launching soon.`}
+        lede={
+          cat === "launching-soon"
+            ? launchingLine
+            : `${list.filter((product) => !product.upcoming).length} on sale now, ${list.filter((product) => product.upcoming).length} launching soon.`
+        }
       />
       <div className="chips">
         <button type="button" className={cat === "all" ? "on" : ""} onClick={() => setCat("all")}>
